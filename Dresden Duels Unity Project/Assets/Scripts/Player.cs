@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ using UnityEngine;
 // need CHILD CLASSES for Dresden & Nicohemus
 public class Player : MonoBehaviour
 {
+
     // Fields
     public GameObject playerPrefab;
     public int pNumber; // determine player 1 or 2
@@ -45,7 +47,6 @@ public class Player : MonoBehaviour
     //Methods 
     void TakeDamage(int pNumber, int damageDealt)
     {
-
         health -= damageDealt;
     }
 

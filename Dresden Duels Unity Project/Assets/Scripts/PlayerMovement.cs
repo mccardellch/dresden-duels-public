@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public SpriteRenderer spriteRenderer;
+
     public float accel = .2f;
     public float deccel = .2f;
     public float grav = .3f;
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -55,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalMovementDir > 0)
         {
             //moving right
+            spriteRenderer.flipX = true;
+
             if (vel.x + effAccel < (maxHorizontalMoveSpeed * horizontalMovementDir))
             {
                 vel.x += effAccel;
@@ -67,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
         else if (horizontalMovementDir < 0)
         {
             //moving left
+            spriteRenderer.flipX = false;
+
             if (vel.x - effAccel > (maxHorizontalMoveSpeed * horizontalMovementDir))
             {
                 vel.x -= effAccel;
