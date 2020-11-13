@@ -46,10 +46,10 @@ public class Player : MonoBehaviour
     void TakeDamage(int pNumber, int damageDealt)
     {
 
-        heatlh -= damageDealt;
+        health -= damageDealt;
     }
 
-    abstract void OnCollision();
+    //abstract void OnCollision();
 
     // NOTE: still working on the class, what we need and logic 
 
