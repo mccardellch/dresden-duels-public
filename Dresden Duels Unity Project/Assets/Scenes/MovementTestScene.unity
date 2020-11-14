@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 481320053}
   - component: {fileID: 481320054}
   - component: {fileID: 481320056}
+  - component: {fileID: 481320057}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -215,6 +216,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &481320057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481320052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11fc89d06aa224489d4fbd7579c1562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfFireball: {fileID: 1422087821627166054, guid: b894c8a4ab535984ea361f90df1f4686, type: 3}
+  spellFirePoint: {fileID: 1548428609}
 --- !u!1 &617592919
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,5 +695,9 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 259c8cc11784d504cb5d4e9ff3929add, type: 2}
+    - target: {fileID: 2172223974569393151, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c340237766264943a51844e41aebe70, type: 3}
