@@ -48,5 +48,11 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = _isMuted;
     }
 
-     
+    public void QuitGame()
+    {
+        Debug.Log("Player quit game");
+        Application.Quit();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
 }

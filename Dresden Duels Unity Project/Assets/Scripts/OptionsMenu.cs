@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlMenu : MonoBehaviour
+public class OptionsMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject controlMenuUI;
+    [SerializeField] private GameObject optionsMenuUI;
     [SerializeField] private GameObject pauseMenuUI;
     
     void Start()
     {
-        controlMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
     }
 
     public void ActivateMenu()
     {
-        controlMenuUI.SetActive(true);
+        optionsMenuUI.SetActive(true);
         pauseMenuUI.SetActive(false);
-        Debug.Log("pauseMenuUI active: " + pauseMenuUI.active);
     }
 
     public void DeactivateMenu()
     {
-        controlMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
 }
