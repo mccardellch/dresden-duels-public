@@ -7,6 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    //Uses the axes set up in Input Manager (In Unity: Edit -> Project Settings -> Input Manager)
+    public string axisNameExtension; //Input Manager input axis name extension. Values can be KB, KBLeft, KBRight, Controller1, or Controller2.
+    //Different input key maps work by changing the input axis (or keys/joystick) that is being checked.
+    string vAxis, hAxis, jumpAxis;
+
     public float accel = .2f;
     public float deccel = .2f;
     public float grav = .3f;
@@ -26,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        vAxis = "Vertical" + axisNameExtension;
+        hAxis = "Horizontal" + axisNameExtension;
+        jumpAxis = "Jump" + axisNameExtension;
         //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -43,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ControlHorizontalMovement()
     {
-        var horizontalMovementDir = Input.GetAxis("Horizontal");
+        var horizontalMovementDir = Input.GetAxis(hAxis);
         if(grounded)
         {
             effAccel = accel;
@@ -113,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void ControlVerticalMovement()
     {
-        if(Input.GetButtonDown("Jump") && grounded)
+        if(Input.GetAxis(jumpAxis) > 0 && grounded)
         {
             vel.y = +jumpSpeed;
         }
