@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public string axisNameExtension; //Input Manager input axis name extension. Values can be KB, KBLeft, KBRight, Controller1, or Controller2.
     //Different input key maps work by changing the input axis (or keys/joystick) that is being checked.
     string vAxis, hAxis, jumpAxis;
+    string[] axisNames;
+    public TMP_Dropdown controlDropDown;
 
     public float accel = .2f;
     public float deccel = .2f;
@@ -35,6 +38,13 @@ public class PlayerMovement : MonoBehaviour
         hAxis = "Horizontal" + axisNameExtension;
         jumpAxis = "Jump" + axisNameExtension;
         //spriteRenderer = GetComponent<SpriteRenderer>();
+
+        axisNames = new string[5];
+        axisNames[0] = "KBLeft";
+        axisNames[1] = "KBRight";
+        axisNames[2] = "KB";
+        axisNames[3] = "Controller1";
+        axisNames[4] = "Controller2";
     }
 
     void Update()
@@ -156,5 +166,15 @@ public class PlayerMovement : MonoBehaviour
     {
         //Call to apply knockback to this player's velocity
 
+    }
+
+    public void ChangeAxisName(int value)
+    {
+        //0: WASD + Space. 1: Arrows + Right Ctrl. 2: Arrow Keys + ZX. 3: Controller 1. 4: Controller 2.
+        axisNameExtension = axisNames[value];
+        vAxis = "Vertical" + axisNameExtension;
+        hAxis = "Horizontal" + axisNameExtension;
+        jumpAxis = "Jump" + axisNameExtension;
+        //controlDropDown.ClearOptions();
     }
 }
