@@ -1534,17 +1534,6 @@ Transform:
   m_Father: {fileID: 1731304150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1257009962 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8388712987299832022, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
-  m_PrefabInstance: {fileID: 8388712987758050467}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8388712987758050468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2180d83866d3649a66312a497d16bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1421776532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1805,7 @@ PrefabInstance:
     - target: {fileID: 7477435015994711710, guid: f96fa3965b372e34e96f6214050fdd54, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1257009962}
+      objectReference: {fileID: 0}
     - target: {fileID: 7477435015994711710, guid: f96fa3965b372e34e96f6214050fdd54, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeAxisName
@@ -1982,6 +1971,59 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7477435015994711709, guid: f96fa3965b372e34e96f6214050fdd54, type: 3}
   m_PrefabInstance: {fileID: 1478050157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547528567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8388712986430189527, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+  m_PrefabInstance: {fileID: 8388712987758050467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1547528568 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8388712986430189525, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+  m_PrefabInstance: {fileID: 8388712987758050467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1547528569
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547528567}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: e3ade50b97df20b409f62694d12736e3, type: 2}
+  - {fileID: 7400000, guid: 02c72026c88190e4e95c2da9d4660342, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!61 &1547528570
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547528567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.52, y: 14.24}
+    newSize: {x: 9.52, y: 14.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001}
+  m_EdgeRadius: 0
 --- !u!1 &1657743779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,6 +2616,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786692358}
   m_CullTransparentMesh: 0
+--- !u!4 &1940751204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8388712986219190754, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+  m_PrefabInstance: {fileID: 8388712987758050467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958855977
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,26 +3084,49 @@ PrefabInstance:
       propertyPath: fireballUseTimerMax
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8388712987299832022, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+    - {fileID: 8388712987299832026, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
 --- !u!1 &8388712987758050468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8388712987299832023, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
   m_PrefabInstance: {fileID: 8388712987758050467}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &8388712987758050469
-Animation:
+--- !u!114 &8388712987758050469
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8388712987758050468}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: e3ade50b97df20b409f62694d12736e3, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c2cf8d872f351409cb6ad572273193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfFireball: {fileID: 1422087821627166054, guid: b894c8a4ab535984ea361f90df1f4686, type: 3}
+  spellFirePoint: {fileID: 1940751204}
+  fireballUseTimerMax: 1
+--- !u!114 &8388712987758050470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388712987758050468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2180d83866d3649a66312a497d16bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1547528568}
+  axisNameExtension: KBLeft
+  controlDropDown: {fileID: 7477435015994711710, guid: f96fa3965b372e34e96f6214050fdd54, type: 3}
+  accel: 2
+  deccel: 0.8
+  grav: 0.09
+  jumpSpeed: 12
+  maxHorizontalMoveSpeed: 5
+  maxVerticalMoveSpeed: 8
+  airControlAmount: 0.5
