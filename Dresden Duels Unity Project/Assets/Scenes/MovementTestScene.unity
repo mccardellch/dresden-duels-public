@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8388712987299832022, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
   m_PrefabInstance: {fileID: 8388712987758050467}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8388712987758050468}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd2180d83866d3649a66312a497d16bb, type: 3}
@@ -2791,9 +2791,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8388712987299832021, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: m_Center.x
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 8388712987299832023, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8388712987299832026, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: fireballUseTimerMax
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+--- !u!1 &8388712987758050468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8388712987299832023, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+  m_PrefabInstance: {fileID: 8388712987758050467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8388712987758050469
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388712987758050468}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: e3ade50b97df20b409f62694d12736e3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

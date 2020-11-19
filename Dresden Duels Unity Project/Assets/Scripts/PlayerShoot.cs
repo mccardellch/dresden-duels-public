@@ -7,17 +7,27 @@ public class PlayerShoot : MonoBehaviour
 
     public GameObject pfFireball;
     public Transform spellFirePoint;
+    public float fireballUseTimerMax;
+    float fireballUseTimer;
+
 
     void Update()
     {
-        if (Input.GetKeyDown("t"))
+        //If a fireball has not been fired for a short time (equal to fireballUseTimerMax)
+        if (fireballUseTimer <= 0)
         {
-            Shoot();
+            if (Input.GetKeyDown("t"))
+            {
+                Shoot();
+                fireballUseTimer = fireballUseTimerMax;
+            }
         }
+        else fireballUseTimer -= Time.deltaTime;
     }
 
     void Shoot()
     {
-        Instantiate(pfFireball, spellFirePoint.position, spellFirePoint.rotation);
+        GameObject tempFireBall=Instantiate(pfFireball, spellFirePoint.position, spellFirePoint.rotation);
+        Destroy(tempFireBall, .5f);
     }
 }
