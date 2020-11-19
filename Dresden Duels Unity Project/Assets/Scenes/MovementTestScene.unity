@@ -2654,6 +2654,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2172223974153947240, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: m_Size.x
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172223974153947240, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 2172223974153947242, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -2662,6 +2670,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: m_Animations.Array.data[3]
+      value: 
+      objectReference: {fileID: 7400000, guid: f345faadfa3034442b24b89992042c0f, type: 2}
     - target: {fileID: 2172223974569392641, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Name
       value: Player 2
