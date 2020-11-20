@@ -11,9 +11,13 @@ public class PlayerMovement : MonoBehaviour
     //Uses the axes set up in Input Manager (In Unity: Edit -> Project Settings -> Input Manager)
     public string axisNameExtension; //Input Manager input axis name extension. Values can be KB, KBLeft, KBRight, Controller1, or Controller2.
     //Different input key maps work by changing the input axis (or keys/joystick) that is being checked.
-    string vAxis, hAxis, jumpAxis;
+    protected string vAxis, hAxis, attackAxis;
     string[] axisNames;
     public TMP_Dropdown controlDropDown;
+    float horizontalMovementDir;
+    float verticalMovementDir;
+    float attackAxisDir;
+    AttackScript attackScript;
 
     public float accel = .2f;
     public float deccel = .2f;
@@ -36,8 +40,9 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         vAxis = "Vertical" + axisNameExtension;
         hAxis = "Horizontal" + axisNameExtension;
-        jumpAxis = "Jump" + axisNameExtension;
+        attackAxis = "Attack" + axisNameExtension;
         //spriteRenderer = GetComponent<SpriteRenderer>();
+        attackScript = GetComponent<AttackScript>();
 
         axisNames = new string[5];
         axisNames[0] = "KBLeft";
@@ -49,10 +54,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        horizontalMovementDir = Input.GetAxis(hAxis);
+        verticalMovementDir = Input.GetAxis(vAxis);
+        attackAxisDir = Input.GetAxis(attackAxis);
         //Player Controlled Movement
         ControlHorizontalMovement();     
         ApplyGravity();
         ControlVerticalMovement();
+
+        //Check if any attacks should be launched
+        TryToLaunchAttacks();
 
         controller.Move(vel * Time.deltaTime);
         //transform.position += vel * Time.deltaTime;
@@ -61,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
 
     void ControlHorizontalMovement()
     {
-        var horizontalMovementDir = Input.GetAxis(hAxis);
         if(grounded)
         {
             effAccel = accel;
@@ -131,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void ControlVerticalMovement()
     {
-        if(Input.GetAxis(jumpAxis) > 0 && grounded)
+        if(Input.GetAxis(vAxis) > 0 && grounded)
         {
             vel.y = +jumpSpeed;
         }
@@ -168,13 +178,37 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void TryToLaunchAttacks()
+    {
+        if (attackAxisDir != 0)
+        {
+            if (horizontalMovementDir < 0)
+            {
+                attackScript.LeftAttack();
+            }
+            else if (horizontalMovementDir > 0)
+            {
+                attackScript.RightAttack();
+            }
+            else if (verticalMovementDir < 0)
+            {
+                attackScript.DownAttack();
+            }
+            else if (verticalMovementDir > 0)
+            {
+                attackScript.UpAttack();
+            }
+            else attackScript.NeutralAttack();
+        }
+    }
+
     public void ChangeAxisName(int value)
     {
         //0: WASD + Space. 1: Arrows + Right Ctrl. 2: Arrow Keys + ZX. 3: Controller 1. 4: Controller 2.
         axisNameExtension = axisNames[value];
         vAxis = "Vertical" + axisNameExtension;
         hAxis = "Horizontal" + axisNameExtension;
-        jumpAxis = "Jump" + axisNameExtension;
+        attackAxis = "Jump" + axisNameExtension;
         //controlDropDown.ClearOptions();
     }
 }

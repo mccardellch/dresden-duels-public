@@ -406,11 +406,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: JumpKB
+    m_Name: AttackKB
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 3
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -422,7 +422,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: JumpKBLeft
+    m_Name: AttackKBLeft
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -438,7 +438,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: JumpKBRight
+    m_Name: AttackKBRight
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -453,6 +453,38 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+  - serializedVersion: 3
+    m_Name: AttackController1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: AttackController2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Submit
     descriptiveName: 
