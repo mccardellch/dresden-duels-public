@@ -7,7 +7,7 @@ public class H_Attacks : AttackScript
 
     public GameObject pfFireball;
     public Transform spellFirePoint;
-    Animator H_Animator;
+    public Animator H_Animator;
     public float fireballUseTimerMax;
     float fireballUseTimer;
     public override void Start()
@@ -23,10 +23,16 @@ public class H_Attacks : AttackScript
             fireballUseTimer -= Time.deltaTime;
         }
     }
-
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow cube at the transform position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(GetComponentInChildren<BoxCollider2D>().transform.position, new Vector3(1, 1, 1));
+    }
     public override void UpAttack()
     {
         UnityEngine.Debug.Log("Harry Up Attack");
+        H_Animator.Play("H_UpAttack");
     }
     public override void DownAttack()
     {
@@ -41,6 +47,11 @@ public class H_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Harry Right Attack");
         TryToShootFireball();
+    }
+    public override void NeutralAttack()
+    {
+        UnityEngine.Debug.Log("Harry Neutral Attack");
+        H_Animator.Play("H_NeutralAttack");
     }
 
     public void TryToShootFireball()
