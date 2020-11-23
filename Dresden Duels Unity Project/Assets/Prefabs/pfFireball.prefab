@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6261234815920006648}
   - component: {fileID: 2065223761605659620}
   - component: {fileID: 2375954666545748615}
+  - component: {fileID: 4291468957156448985}
   m_Layer: 0
   m_Name: pfFireball
   m_TagString: Untagged
@@ -136,3 +137,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 6261234815920006648}
+--- !u!114 &4291468957156448985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422087821627166054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba418c4012a1b8e41a6f31a87cb67c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0.3, y: -0.12}
+  boxSize: {x: 0.48, y: 0.46}
+  rotX: 0
+  rotY: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
+  creator: {fileID: 0}
+  damage: 0
+  knockbackAmount: 0

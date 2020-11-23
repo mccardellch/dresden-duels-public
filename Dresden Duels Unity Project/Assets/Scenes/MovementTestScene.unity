@@ -642,6 +642,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198812842}
   m_CullTransparentMesh: 0
+--- !u!1 &241801270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241801271}
+  - component: {fileID: 241801272}
+  m_Layer: 8
+  m_Name: HurtBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &241801271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241801270}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1571613764}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &241801272
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241801270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78, y: 1.85, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &248266044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2267,69 @@ MonoBehaviour:
   backLag: 30
   neutralLag: 15
   N_Animator: {fileID: 0}
+--- !u!4 &1571613764 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2172223974569393149, guid: 7c340237766264943a51844e41aebe70, type: 3}
+  m_PrefabInstance: {fileID: 2172223975965236990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571613765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571613762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150755ef1310980449c5799199fad14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
+  pNumber: 1
+--- !u!1 &1580753824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580753825}
+  - component: {fileID: 1580753826}
+  m_Layer: 8
+  m_Name: HurtBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1580753825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580753824}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8388712987758050474}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1580753826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580753824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78, y: 1.85, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1657743779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,6 +3375,10 @@ PrefabInstance:
       propertyPath: attackScript
       value: 
       objectReference: {fileID: 1571613763}
+    - target: {fileID: 2172223974569393148, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: grav
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2172223974569393149, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.414
@@ -3463,7 +3574,7 @@ MonoBehaviour:
   controlDropDown: {fileID: 7477435015994711710, guid: f96fa3965b372e34e96f6214050fdd54, type: 3}
   accel: 2
   deccel: 0.8
-  grav: 0.09
+  grav: 1
   jumpSpeed: 12
   maxHorizontalMoveSpeed: 5
   maxVerticalMoveSpeed: 8
@@ -3487,3 +3598,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8388712987758050472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388712987758050468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150755ef1310980449c5799199fad14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
+  pNumber: 0
+--- !u!4 &8388712987758050474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8388712987299832020, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+  m_PrefabInstance: {fileID: 8388712987758050467}
+  m_PrefabAsset: {fileID: 0}

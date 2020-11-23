@@ -60,6 +60,7 @@ public class H_Attacks : AttackScript
         if (fireballUseTimer <= 0)
         {
             GameObject tempFireBall = Instantiate(pfFireball, spellFirePoint.position, spellFirePoint.rotation);
+            tempFireBall.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
             Destroy(tempFireBall, .5f);
             fireballUseTimer = fireballUseTimerMax;
         }

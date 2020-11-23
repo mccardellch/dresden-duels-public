@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     float effAccel = 0;
     float effDeccel = 0;
 
+    //variables to determine if the jump key is pressed or held
+    bool jumpKey = false;
+    bool jumpKeyLast = false;
+
     bool grounded = false;
     Vector3 vel = new Vector3(0, 0, 0);
     CharacterController controller;
@@ -52,11 +56,22 @@ public class PlayerMovement : MonoBehaviour
         axisNames[4] = "Controller2";
     }
 
-    void Update()
+    void FixedUpdate()
     {
         horizontalMovementDir = Input.GetAxis(hAxis);
         verticalMovementDir = Input.GetAxis(vAxis);
         attackAxisDir = Input.GetAxis(attackAxis);
+
+        
+        if (Input.GetAxis(vAxis) > 0)
+        {
+            jumpKey = true;
+        }
+        else
+        {
+            jumpKey = false;
+        }
+
         //Player Controlled Movement
         ControlHorizontalMovement();     
         ApplyGravity();
@@ -65,9 +80,11 @@ public class PlayerMovement : MonoBehaviour
         //Check if any attacks should be launched
         TryToLaunchAttacks();
 
-        controller.Move(vel * Time.deltaTime);
-        //transform.position += vel * Time.deltaTime;
+        controller.Move(vel * Time.fixedDeltaTime);
+
+        jumpKeyLast = jumpKey;
     }
+
 
 
     void ControlHorizontalMovement()
@@ -141,9 +158,14 @@ public class PlayerMovement : MonoBehaviour
     }
     void ControlVerticalMovement()
     {
-        if(Input.GetAxis(vAxis) > 0 && grounded)
+        if(jumpKey && !jumpKeyLast && grounded)
         {
-            vel.y = +jumpSpeed;
+            vel.y = jumpSpeed;
+ 
+        }
+        if(!jumpKey && vel.y > 0)
+        {
+            vel.y *= .1f;
         }
     }
 
