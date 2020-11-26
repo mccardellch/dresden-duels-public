@@ -26,9 +26,10 @@ public class HitBox : MonoBehaviour
     void Update()
     {
         boxSize = hitbox.size;
-        position = hitbox.transform.position;
-        position.x += hitbox.offset.x;
-        position.y += hitbox.offset.y;
+        position = hitbox.transform.position.normalized;
+       // position.x += hitbox.offset.x;
+        //position.y += hitbox.offset.y;
+        //position.z = 0;
             
         Collider[] colliders = Physics.OverlapBox(position + (transform.rotation * position), boxSize, transform.rotation * Quaternion.Euler(rotX, rotY, 0), mask);
         
@@ -61,7 +62,7 @@ public class HitBox : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 0, 0, .2f);
-        Gizmos.matrix = Matrix4x4.TRS(transform.position + (transform.rotation * position), transform.rotation * Quaternion.Euler(rotX, rotY, 0), transform.localScale);
+        Gizmos.matrix = Matrix4x4.TRS(position + (transform.rotation * position), transform.rotation * Quaternion.Euler(rotX, rotY, 0), transform.localScale);
         Gizmos.DrawCube(Vector3.zero, new Vector3(boxSize.x * 2, boxSize.y * 2, 1));
     }
 }

@@ -17,11 +17,6 @@ public class N_Attacks : AttackScript
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(GetComponentInChildren<BoxCollider2D>().transform.position, new Vector3(1, 1, 1));
     }
-    // Update is called once per frame
-    public override void Update()
-    {
-
-    }
     public override void UpAttack()
     {
         UnityEngine.Debug.Log("Nico Up Attack");
@@ -35,12 +30,12 @@ public class N_Attacks : AttackScript
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Nico Left Attack");
-        N_Animator.Play("N_BackAttack");
+        N_Animator.Play("N_ForwardAttack");
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Nico Right Attack");
-        N_Animator.Play("N_ForwardAttack");
+        N_Animator.Play("N_BackAttack");
     }
 
     public override void NeutralAttack()

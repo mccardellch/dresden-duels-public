@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //moving right
             spriteRenderer.flipX = true;
+            //spriteRenderer.gameObject.GetComponent<Animation>().transform.localScale.Set(1, 1, 1);
 
             if (vel.x + effAccel < (maxHorizontalMoveSpeed * horizontalMovementDir))
             {
@@ -119,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //moving left
             spriteRenderer.flipX = false;
-
+            //spriteRenderer.gameObject.GetComponent<Animation>().transform.localScale.Set(-1, 1, 1);
             if (vel.x - effAccel > (maxHorizontalMoveSpeed * horizontalMovementDir))
             {
                 vel.x -= effAccel;
@@ -206,21 +207,21 @@ public class PlayerMovement : MonoBehaviour
         {
             if (horizontalMovementDir < 0)
             {
-                attackScript.LeftAttack();
+                attackScript.tryAttack(3);
             }
             else if (horizontalMovementDir > 0)
             {
-                attackScript.RightAttack();
+                attackScript.tryAttack(1);
             }
             else if (verticalMovementDir < 0)
             {
-                attackScript.DownAttack();
+                attackScript.tryAttack(2);
             }
             else if (verticalMovementDir > 0)
             {
-                attackScript.UpAttack();
+                attackScript.tryAttack(0);
             }
-            else attackScript.NeutralAttack();
+            else attackScript.tryAttack(4);
         }
     }
 

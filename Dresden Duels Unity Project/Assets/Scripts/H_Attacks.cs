@@ -16,13 +16,6 @@ public class H_Attacks : AttackScript
         fireballUseTimerMax = 0.5f;
         fireballUseTimer = 0;
     }
-    public override void Update()
-    {
-        if (fireballUseTimer > 0)
-        {
-            fireballUseTimer -= Time.deltaTime;
-        }
-    }
     void OnDrawGizmosSelected()
     {
         // Draw a yellow cube at the transform position
@@ -41,12 +34,12 @@ public class H_Attacks : AttackScript
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Harry Left Attack");
-        TryToShootFireball(0);
+        ShootFireball(0);
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Harry Right Attack");
-        TryToShootFireball(1);
+        ShootFireball(1);
     }
     public override void NeutralAttack()
     {
@@ -54,16 +47,12 @@ public class H_Attacks : AttackScript
         H_Animator.Play("H_NeutralAttack");
     }
 
-    public void TryToShootFireball(int dir)
+    public void ShootFireball(int dir)
     {
-        //If a fireball has not been fired for a short time (equal to fireballUseTimerMax)
-        if (fireballUseTimer <= 0)
-        {
-            GameObject tempFireBall = Instantiate(pfFireball, spellFirePoint.position, spellFirePoint.rotation);
-            tempFireBall.GetComponent<FireballHitbox>().creator = GetComponentInParent<Player>();
-            tempFireBall.GetComponent<Spells>().dir = dir;
-            Destroy(tempFireBall, .5f);
-            fireballUseTimer = fireballUseTimerMax;
-        }
+        GameObject tempFireBall = Instantiate(pfFireball, spellFirePoint.position, spellFirePoint.rotation);
+        tempFireBall.GetComponent<FireballHitbox>().creator = GetComponentInParent<Player>();
+        tempFireBall.GetComponent<Spells>().dir = dir;
+        Destroy(tempFireBall, .5f);
+        fireballUseTimer = fireballUseTimerMax;
     }
 }
