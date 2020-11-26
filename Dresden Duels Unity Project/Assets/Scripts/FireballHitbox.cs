@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitBox : MonoBehaviour
+public class FireballHitbox : MonoBehaviour
 {
     public BoxCollider2D hitbox;
 
@@ -25,13 +25,8 @@ public class HitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boxSize = hitbox.size;
-        position = hitbox.transform.position;
-        position.x += hitbox.offset.x;
-        position.y += hitbox.offset.y;
-            
-        Collider[] colliders = Physics.OverlapBox(position + (transform.rotation * position), boxSize, transform.rotation * Quaternion.Euler(rotX, rotY, 0), mask);
-        
+        Collider[] colliders = Physics.OverlapBox(transform.position + (transform.rotation * position), boxSize, transform.rotation * Quaternion.Euler(rotX, rotY, 0), mask);
+
         if (colliders.Length > 0)
         {
             for (int i = 0; i < colliders.Length; i++)

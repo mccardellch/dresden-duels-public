@@ -226,11 +226,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeAxisName(int value)
     {
+        UnityEngine.Debug.Log(value);
         //0: WASD + Space. 1: Arrows + Right Ctrl. 2: Arrow Keys + ZX. 3: Controller 1. 4: Controller 2.
         axisNameExtension = axisNames[value];
         vAxis = "Vertical" + axisNameExtension;
         hAxis = "Horizontal" + axisNameExtension;
-        attackAxis = "Jump" + axisNameExtension;
+        attackAxis = "Attack" + axisNameExtension;
         //controlDropDown.ClearOptions();
     }
 }
