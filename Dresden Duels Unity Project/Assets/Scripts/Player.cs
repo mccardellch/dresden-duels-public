@@ -10,16 +10,20 @@ public class Player : MonoBehaviour
 {
 
     // Fields
-    public GameObject playerPrefab;
+    public GameObject player;
     public OptionsMenu optionMenu;
     public int pNumber; // determine player 1 or 2
     private string pName;
     private int health = 50;
     private Vector2 position;
+    private string animName;
 
     private void Start()
     {
         health = 50;
+        animName = player.name.Substring(0, 1); //this makes it H_Hit or N_Hit
+        //I will make that clearer/structure it better.
+        animName += "_Hit";
     }
 
     // Properties
@@ -54,6 +58,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damageDealt)
     {
         health -= damageDealt;
+        player.GetComponent<Animator>().Play(animName);
         UnityEngine.Debug.Log(name + " has " + health);
         if (health<=0)
         {

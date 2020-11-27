@@ -3242,6 +3242,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: e3ade50b97df20b409f62694d12736e3, type: 2}
   - {fileID: 7400000, guid: 02c72026c88190e4e95c2da9d4660342, type: 2}
+  - {fileID: 7400000, guid: cc06d188d73e04147bfabd03a0208b4a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -5111,6 +5112,10 @@ PrefabInstance:
       propertyPath: optionMenu
       value: 
       objectReference: {fileID: 537771224}
+    - target: {fileID: 1571613765, guid: 7c340237766264943a51844e41aebe70, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 356960280}
     - target: {fileID: 2172223974153947240, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5137,7 +5142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animations.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animations.Array.data[3]
@@ -5158,7 +5163,7 @@ PrefabInstance:
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animations.Array.data[4]
       value: 
-      objectReference: {fileID: 7400000, guid: e3ade50b97df20b409f62694d12736e3, type: 2}
+      objectReference: {fileID: 7400000, guid: de21fa1544231b041b70db1a20b37365, type: 2}
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animations.Array.data[5]
       value: 
@@ -5386,6 +5391,10 @@ PrefabInstance:
       propertyPath: optionMenu
       value: 
       objectReference: {fileID: 537771224}
+    - target: {fileID: 8388712987758050472, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1547528567}
     m_RemovedComponents:
     - {fileID: 8388712987299832022, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
     - {fileID: 8388712987299832026, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
