@@ -3433,11 +3433,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBox: {fileID: 356960285}
-  upLag: 1
+  upLag: 0.3
   downLag: 0
-  rightLag: 1
-  leftLag: 1
-  neutralLag: 1
+  rightLag: 0.3
+  leftLag: 0.3
+  neutralLag: 0.3
   N_Animator: {fileID: 0}
 --- !u!4 &1571613764 stripped
 Transform:
@@ -5373,15 +5373,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: upLag
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: neutralLag
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: downLag
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: hitBox
