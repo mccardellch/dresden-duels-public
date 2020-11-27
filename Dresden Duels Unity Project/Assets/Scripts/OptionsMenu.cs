@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] private GameObject optionsMenuUI;
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject endMenuUI;
+    [SerializeField] private  TMP_Text endText;
 
     void Start()
     {
@@ -27,11 +29,12 @@ public class OptionsMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
     }
 
-    public void ActivateEndMenu()
+    public void ActivateEndMenu(string loser)
     {
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
         endMenuUI.SetActive(true);
+        endText.text = loser + " has unfortunately lost the battle for Chicago.";
     }
     public void ReloadScene()
     {

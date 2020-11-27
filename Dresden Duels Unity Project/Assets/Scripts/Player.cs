@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         UnityEngine.Debug.Log(name + " has " + health);
         if (health<=0)
         {
-            optionMenu.ActivateEndMenu();
+            optionMenu.ActivateEndMenu(player.name);
         }
     }
 
