@@ -21,6 +21,7 @@ public class N_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Nico Up Attack");
         N_Animator.Play("N_UpAttack");
+        hitBox.damage = 8;
     }
     public override void DownAttack()
     {
@@ -31,16 +32,19 @@ public class N_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Nico Left Attack");
         N_Animator.Play("N_ForwardAttack");
+        hitBox.damage = 10;
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Nico Right Attack");
         N_Animator.Play("N_BackAttack");
+        hitBox.damage = 12;
     }
 
     public override void NeutralAttack()
     {
         UnityEngine.Debug.Log("Nico Neutral Attack");
         N_Animator.Play("N_NeutralAttack");
+        hitBox.damage = 4;
     }
 }

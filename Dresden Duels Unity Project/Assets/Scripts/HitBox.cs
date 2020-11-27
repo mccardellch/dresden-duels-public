@@ -48,7 +48,7 @@ public class HitBox : MonoBehaviour
                     {
                         //deal damage
                         Debug.Log(creator.name + " hits " + player.name + " for " + damage + " damage");
-                        player.Health -= Mathf.RoundToInt(damage);
+                        player.TakeDamage(Mathf.RoundToInt(damage));
                         //player.currentKnockback += transform.up * knockbackAmount;
 
                         //Change hasHit to true to make sure it does not hit the same target twice

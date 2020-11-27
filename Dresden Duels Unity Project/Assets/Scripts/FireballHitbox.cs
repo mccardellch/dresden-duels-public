@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireballHitbox : MonoBehaviour
 {
-    public BoxCollider2D hitbox;
+    //public BoxCollider2D hitbox;
 
     //size
     public Vector3 position;
@@ -18,7 +18,7 @@ public class FireballHitbox : MonoBehaviour
 
     //stats
     public Player creator;
-    public float damage = 0;
+    public float damage = 8;
     public float knockbackAmount = 0;
 
 
@@ -42,7 +42,7 @@ public class FireballHitbox : MonoBehaviour
                     {
                         //deal damage
                         Debug.Log(creator.name + " hits " + player.name + " for " + damage + " damage");
-                        player.Health -= Mathf.RoundToInt(damage);
+                        player.TakeDamage(Mathf.RoundToInt(damage));
                         //player.currentKnockback += transform.up * knockbackAmount;
 
                         //Change hasHit to true to make sure it does not hit the same target twice

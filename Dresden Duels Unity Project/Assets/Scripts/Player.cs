@@ -11,10 +11,16 @@ public class Player : MonoBehaviour
 
     // Fields
     public GameObject playerPrefab;
+    public OptionsMenu optionMenu;
     public int pNumber; // determine player 1 or 2
     private string pName;
-    private int health;
+    private int health = 50;
     private Vector2 position;
+
+    private void Start()
+    {
+        health = 50;
+    }
 
     // Properties
     public string Name
@@ -26,7 +32,7 @@ public class Player : MonoBehaviour
     public int Health
     {
         get { return health; }
-        set { health = value; }
+        set { health = 50; }
     }
     
     public Vector2 Position
@@ -45,9 +51,14 @@ public class Player : MonoBehaviour
     }
 
     //Methods 
-    void TakeDamage(int pNumber, int damageDealt)
+    public void TakeDamage(int damageDealt)
     {
         health -= damageDealt;
+        UnityEngine.Debug.Log(name + " has " + health);
+        if (health<=0)
+        {
+            optionMenu.ActivateEndMenu();
+        }
     }
 
     //abstract void OnCollision();

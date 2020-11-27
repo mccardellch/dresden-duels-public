@@ -6,8 +6,9 @@ public class AttackScript : MonoBehaviour
 {
     protected float endLag;
     protected float time;
+    public HitBox hitBox;
     //public bool canAttack; 
-    public float upLag=1, downLag=1, rightLag=1, leftLag=1, neutralLag=1;
+    public float upLag=0.3f, downLag=0.2f, rightLag=0.4f, leftLag=0.3f, neutralLag=0.2f;
 
     public void tryAttack(int attack)
     {

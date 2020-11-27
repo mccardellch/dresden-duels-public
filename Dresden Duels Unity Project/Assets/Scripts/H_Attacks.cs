@@ -26,25 +26,30 @@ public class H_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Harry Up Attack");
         H_Animator.Play("H_UpAttack");
+        hitBox.damage = 12;
     }
     public override void DownAttack()
     {
         UnityEngine.Debug.Log("Harry Down Attack");
+        hitBox.damage = 6;
     }
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Harry Left Attack");
         ShootFireball(0);
+        hitBox.damage = 8;
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Harry Right Attack");
         ShootFireball(1);
+        hitBox.damage = 8;
     }
     public override void NeutralAttack()
     {
         UnityEngine.Debug.Log("Harry Neutral Attack");
         H_Animator.Play("H_NeutralAttack");
+        hitBox.damage = 4;
     }
 
     public void ShootFireball(int dir)
