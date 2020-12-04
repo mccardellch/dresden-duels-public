@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private bool isPaused;
     [SerializeField] private bool isMuted;
 
+    [SerializeField] private GameObject gameEnvironment;
+
     void Start()
     {
         pauseMenuUI.SetActive(false);
@@ -33,12 +35,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenuUI.SetActive(true);
+        gameEnvironment.SetActive(false);
     }
 
     public void DeactivateMenu()
     {
         Time.timeScale = 1;
         pauseMenuUI.SetActive(false);
+        gameEnvironment.SetActive(true);
         isPaused = false;
     }
 
