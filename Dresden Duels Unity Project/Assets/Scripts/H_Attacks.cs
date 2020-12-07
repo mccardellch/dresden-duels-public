@@ -10,6 +10,7 @@ public class H_Attacks : AttackScript
     public Animator H_Animator;
     public float fireballUseTimerMax;
     float fireballUseTimer;
+    public Animator anim;
     public override void Start()
     {
         H_Animator = GetComponentInChildren<Animator>();
@@ -26,23 +27,27 @@ public class H_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Harry Up Attack");
         H_Animator.Play("H_UpAttack");
+        anim.SetTrigger("Attack");
         hitBox.damage = 12;
     }
     public override void DownAttack()
     {
         UnityEngine.Debug.Log("Harry Down Attack");
         hitBox.damage = 6;
+        anim.SetTrigger("Attack");
     }
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Harry Left Attack");
         ShootFireball(0);
+        anim.SetTrigger("Attack");
         hitBox.damage = 8;
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Harry Right Attack");
         ShootFireball(1);
+        anim.SetTrigger("Attack");
         hitBox.damage = 8;
     }
     public override void NeutralAttack()

@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 vel = new Vector3(0, 0, 0);
     CharacterController controller;
 
+    public Animator anim;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -105,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //moving right
             spriteRenderer.flipX = true;
+            
             //spriteRenderer.gameObject.GetComponent<Animation>().transform.localScale.Set(1, 1, 1);
 
             if (vel.x + effAccel < (maxHorizontalMoveSpeed * horizontalMovementDir))
@@ -208,6 +211,7 @@ public class PlayerMovement : MonoBehaviour
             if (horizontalMovementDir < 0)
             {
                 attackScript.tryAttack(3);
+
             }
             else if (horizontalMovementDir > 0)
             {
