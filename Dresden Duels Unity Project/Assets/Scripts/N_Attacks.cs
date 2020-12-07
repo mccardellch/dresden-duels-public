@@ -6,6 +6,7 @@ using UnityEngine;
 public class N_Attacks : AttackScript
 {
     public Animator N_Animator;
+    public SFX sfx;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -21,6 +22,7 @@ public class N_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Nico Up Attack");
         N_Animator.Play("N_UpAttack");
+        sfx.play = true;
         hitBox.damage = 8;
     }
     public override void DownAttack()
@@ -32,12 +34,14 @@ public class N_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Nico Left Attack");
         N_Animator.Play("N_ForwardAttack");
+        sfx.play = true;
         hitBox.damage = 10;
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Nico Right Attack");
         N_Animator.Play("N_BackAttack");
+        sfx.play = true;
         hitBox.damage = 12;
     }
 

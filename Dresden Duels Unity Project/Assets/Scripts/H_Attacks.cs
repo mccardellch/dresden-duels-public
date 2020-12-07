@@ -11,6 +11,9 @@ public class H_Attacks : AttackScript
     public float fireballUseTimerMax;
     float fireballUseTimer;
     public Animator anim;
+
+    public SFX sfx;
+
     public override void Start()
     {
         H_Animator = GetComponentInChildren<Animator>();
@@ -28,6 +31,9 @@ public class H_Attacks : AttackScript
         UnityEngine.Debug.Log("Harry Up Attack");
         H_Animator.Play("H_UpAttack");
         anim.SetTrigger("Attack");
+
+        sfx.play = true;
+
         hitBox.damage = 12;
     }
     public override void DownAttack()
@@ -35,12 +41,14 @@ public class H_Attacks : AttackScript
         UnityEngine.Debug.Log("Harry Down Attack");
         hitBox.damage = 6;
         anim.SetTrigger("Attack");
+        sfx.play = true;
     }
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Harry Left Attack");
         ShootFireball(0);
         anim.SetTrigger("Attack");
+        sfx.play = true;
         hitBox.damage = 8;
     }
     public override void RightAttack()
@@ -48,6 +56,7 @@ public class H_Attacks : AttackScript
         UnityEngine.Debug.Log("Harry Right Attack");
         ShootFireball(1);
         anim.SetTrigger("Attack");
+        sfx.play = true;
         hitBox.damage = 8;
     }
     public override void NeutralAttack()
