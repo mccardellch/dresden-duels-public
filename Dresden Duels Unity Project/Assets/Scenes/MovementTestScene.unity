@@ -3883,7 +3883,7 @@ Animator:
   m_GameObject: {fileID: 1571613762}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48c6c1b8dbd893f47a4911f4f980ee44, type: 2}
+  m_Controller: {fileID: 9100000, guid: 85c7cfdc69f52e449ad3ca1b19ff4a61, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4199,7 +4199,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8dc70b066bf53e7469084ff96b131ddf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62e925c44c5b63c4bab3319f406dc566, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5964,7 +5964,7 @@ PrefabInstance:
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: f345faadfa3034442b24b89992042c0f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2172223974153947243, guid: 7c340237766264943a51844e41aebe70, type: 3}
       propertyPath: m_Animations.Array.data[0]
       value: 
