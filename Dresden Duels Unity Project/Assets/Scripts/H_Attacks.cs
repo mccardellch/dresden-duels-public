@@ -19,6 +19,7 @@ public class H_Attacks : AttackScript
         H_Animator = GetComponentInChildren<Animator>();
         fireballUseTimerMax = 0.5f;
         fireballUseTimer = 0;
+        upLag = .5f;
     }
     void OnDrawGizmosSelected()
     {
