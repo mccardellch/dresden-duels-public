@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
-    public BoxCollider2D hitbox;
+    //public BoxCollider2D hitbox;
 
     //size
     public Vector3 position;
@@ -25,14 +25,12 @@ public class HitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        boxSize = hitbox.size;
-        position = hitbox.transform.position.normalized;
-       // position.x += hitbox.offset.x;
+        // position.x += hitbox.offset.x;
         //position.y += hitbox.offset.y;
         //position.z = 0;
-            
-        Collider[] colliders = Physics.OverlapBox(position + (transform.rotation * position), boxSize, transform.rotation * Quaternion.Euler(rotX, rotY, 0), mask);
-        
+
+        Collider[] colliders = Physics.OverlapBox(transform.position + (transform.rotation * position), boxSize, transform.rotation * Quaternion.Euler(rotX, rotY, 0), mask);
+
         if (colliders.Length > 0)
         {
             for (int i = 0; i < colliders.Length; i++)
@@ -63,6 +61,6 @@ public class HitBox : MonoBehaviour
     {
         Gizmos.color = new Color(1, 0, 0, .2f);
         Gizmos.matrix = Matrix4x4.TRS(position + (transform.rotation * position), transform.rotation * Quaternion.Euler(rotX, rotY, 0), transform.localScale);
-        Gizmos.DrawCube(Vector3.zero, new Vector3(boxSize.x * 2, boxSize.y * 2, 1));
+        Gizmos.DrawCube(Vector3.zero, new Vector3(boxSize.x, boxSize.y, 1));
     }
 }

@@ -7,6 +7,7 @@ public class AttackScript : MonoBehaviour
     protected float endLag;
     protected float time;
     public HitBox hitBox;
+    public GameObject upHitbox, leftHitbox, rightHitbox;
     //public bool canAttack; 
     public float upLag=0.3f, downLag=0.2f, rightLag=0.4f, leftLag=0.3f, neutralLag=0.2f;
 
@@ -22,11 +23,11 @@ public class AttackScript : MonoBehaviour
             else if (attack == 4) { endLag = neutralLag; NeutralAttack(); }
         }
     }
-    public virtual void UpAttack() { endLag = upLag; }
-    public virtual void RightAttack() { endLag = rightLag; }
-    public virtual void DownAttack() { endLag = downLag; }
+    public virtual void UpAttack() {  }
+    public virtual void RightAttack() {}
+    public virtual void DownAttack() {}
 
-    public virtual void LeftAttack() { endLag = leftLag; }
+    public virtual void LeftAttack() {}
 
     public virtual void NeutralAttack() { endLag = neutralLag; }
 

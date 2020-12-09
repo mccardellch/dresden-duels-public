@@ -1262,11 +1262,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &356960283 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2172223974153947240, guid: 7c340237766264943a51844e41aebe70, type: 3}
-  m_PrefabInstance: {fileID: 2172223975965236990}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &356960284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2172223974153947245, guid: 7c340237766264943a51844e41aebe70, type: 3}
@@ -1284,7 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba418c4012a1b8e41a6f31a87cb67c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 356960283}
   position: {x: 0, y: 0, z: 0}
   boxSize: {x: 0, y: 0}
   rotX: 0
@@ -3726,7 +3720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba418c4012a1b8e41a6f31a87cb67c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 1547528570}
   position: {x: 0, y: 0, z: 0}
   boxSize: {x: 0, y: 0}
   rotX: 0
@@ -3850,6 +3843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBox: {fileID: 356960285}
+  upHitbox: {fileID: 1624452260952658530, guid: 80306535389331744be6770c80fb0654, type: 3}
+  leftHitbox: {fileID: 8021047165441269034, guid: 6e8bd25fff1f67148b9bdce91cad808e, type: 3}
+  rightHitbox: {fileID: 5719445649851987973, guid: 94f1614f78f0ccc4ca1d0f8c8c148d5e, type: 3}
   upLag: 0.3
   downLag: 0
   rightLag: 0.3
@@ -6127,6 +6123,10 @@ PrefabInstance:
     - target: {fileID: 8388712986430189525, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388712986430189527, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: m_Name
+      value: Harry
       objectReference: {fileID: 0}
     - target: {fileID: 8388712987299832020, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: m_LocalPosition.x

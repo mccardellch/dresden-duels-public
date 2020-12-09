@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FireballHitbox : MonoBehaviour
 {
-    //public BoxCollider2D hitbox;
-
     //size
     public Vector3 position;
     public Vector2 boxSize;
