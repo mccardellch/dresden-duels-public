@@ -9,7 +9,7 @@ public class AttackScript : MonoBehaviour
     bool shouldChangeBackSprite;
     public HitBox hitBox;
     public GameObject upHitbox, leftHitbox, rightHitbox, neutralHitbox;
-    public Sprite upSprite, leftSprite, rightSprite, neutralSprite, defaultSprite;
+    public Sprite upSprite, leftSprite, rightSprite, neutralSprite, defaultSprite, hitSprite;
     public SpriteRenderer sr;
     //public bool canAttack; 
     public float upLag=0.3f, downLag=0.2f, rightLag=0.4f, leftLag=0.3f, neutralLag=0.2f;
@@ -55,5 +55,10 @@ public class AttackScript : MonoBehaviour
             shouldChangeBackSprite = false;
         }
     }
-
+    public void setLag(float lag)
+    {
+        endLag = lag;
+        sr.sprite = hitSprite;
+        shouldChangeBackSprite = true;
+    }
 }

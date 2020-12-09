@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     // Fields
     public GameObject player;
     public OptionsMenu optionMenu;
+    public SpriteRenderer sr;
     public int pNumber; // determine player 1 or 2
     private string pName;
     private int health = 50;
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
         //I will make that clearer/structure it better.
         animName += "_Hit";
     }
-
     // Properties
     public string Name
     {
@@ -58,7 +58,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damageDealt)
     {
         health -= damageDealt;
-        player.GetComponent<Animator>().Play(animName);
+        //player.GetComponent<Animator>().Play(animName);
+        GetComponent<AttackScript>().setLag(0.5f);
         UnityEngine.Debug.Log(name + " has " + health);
         if (health<=0)
         {
