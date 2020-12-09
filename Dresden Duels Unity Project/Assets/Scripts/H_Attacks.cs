@@ -29,9 +29,12 @@ public class H_Attacks : AttackScript
     public override void UpAttack()
     {
         UnityEngine.Debug.Log("Harry Up Attack");
-        H_Animator.Play("H_UpAttack");
-        anim.SetTrigger("Attack");
-
+        //H_Animator.Play("H_UpAttack");
+        //anim.SetTrigger("Attack");
+        GameObject tempHitbox = Instantiate(upHitbox, transform.position, transform.rotation);
+        tempHitbox.transform.parent = GetComponentInParent<Player>().transform;
+        tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        Destroy(tempHitbox, upLag);
         sfx.play = true;
 
         hitBox.damage = 12;
@@ -39,15 +42,14 @@ public class H_Attacks : AttackScript
     public override void DownAttack()
     {
         UnityEngine.Debug.Log("Harry Down Attack");
-        hitBox.damage = 6;
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         sfx.play = true;
     }
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Harry Left Attack");
         ShootFireball(0);
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         sfx.play = true;
         hitBox.damage = 8;
     }
@@ -55,14 +57,18 @@ public class H_Attacks : AttackScript
     {
         UnityEngine.Debug.Log("Harry Right Attack");
         ShootFireball(1);
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         sfx.play = true;
         hitBox.damage = 8;
     }
     public override void NeutralAttack()
     {
         UnityEngine.Debug.Log("Harry Neutral Attack");
-        H_Animator.Play("H_NeutralAttack");
+        sr.sprite = neutralSprite;
+        GameObject tempHitbox = Instantiate(neutralHitbox, transform.position, transform.rotation);
+        tempHitbox.transform.parent = GetComponentInParent<Player>().transform;
+        tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        Destroy(tempHitbox, neutralLag);
         hitBox.damage = 4;
     }
 

@@ -6,8 +6,11 @@ public class AttackScript : MonoBehaviour
 {
     protected float endLag;
     protected float time;
+    bool shouldChangeBackSprite;
     public HitBox hitBox;
-    public GameObject upHitbox, leftHitbox, rightHitbox;
+    public GameObject upHitbox, leftHitbox, rightHitbox, neutralHitbox;
+    public Sprite upSprite, leftSprite, rightSprite, neutralSprite, defaultSprite;
+    public SpriteRenderer sr;
     //public bool canAttack; 
     public float upLag=0.3f, downLag=0.2f, rightLag=0.4f, leftLag=0.3f, neutralLag=0.2f;
 
@@ -16,6 +19,7 @@ public class AttackScript : MonoBehaviour
         //If the player is not in lag any more.
         if (endLag<=0)
         {
+            shouldChangeBackSprite = true;
             if (attack == 0) {endLag = upLag; UpAttack(); }
             else if (attack == 1) { endLag = rightLag; RightAttack(); }
             else if (attack == 2) {endLag = downLag; DownAttack(); }
@@ -43,6 +47,12 @@ public class AttackScript : MonoBehaviour
         if (endLag > 0)
         {
             endLag -= time;
+        }
+        else if (shouldChangeBackSprite)
+        {
+            sr.color = Color.black;
+            sr.sprite = defaultSprite;
+            shouldChangeBackSprite = false;
         }
     }
 

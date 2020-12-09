@@ -21,38 +21,38 @@ public class N_Attacks : AttackScript
     public override void UpAttack()
     {
         UnityEngine.Debug.Log("Nico Up Attack");
-        N_Animator.Play("N_UpAttack");
+       
         GameObject tempHitbox = Instantiate(upHitbox);
         tempHitbox.transform.parent = transform;
         tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        sr.GetComponent<SpriteRenderer>().sprite=upSprite;
         Destroy(tempHitbox, upLag);
         sfx.play = true;
-        //hitBox.damage = 8;
     }
     public override void DownAttack()
     {
         UnityEngine.Debug.Log("Nico Down Attack");
-        N_Animator.Play("N_DownAttack");
+        sr.GetComponent<SpriteRenderer>().color = Color.red; //could be a defense move, does nothing now.
     }
     public override void LeftAttack()
     {
         UnityEngine.Debug.Log("Nico Left Attack");
-        N_Animator.Play("N_ForwardAttack");
         sfx.play = true;
         GameObject tempHitbox = Instantiate(leftHitbox);
         tempHitbox.transform.parent = transform;
         tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        sr.GetComponent<SpriteRenderer>().sprite = leftSprite;
         Destroy(tempHitbox, leftLag);
         //hitBox.damage = 10;
     }
     public override void RightAttack()
     {
         UnityEngine.Debug.Log("Nico Right Attack");
-        N_Animator.Play("N_BackAttack");
         sfx.play = true;
         GameObject tempHitbox = Instantiate(rightHitbox, transform.position, transform.rotation);
         tempHitbox.transform.parent = GetComponentInParent<Player>().transform;
         tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        sr.GetComponent<SpriteRenderer>().sprite = rightSprite;
         Destroy(tempHitbox, rightLag);
         //hitBox.damage = 12;
     }
@@ -60,7 +60,11 @@ public class N_Attacks : AttackScript
     public override void NeutralAttack()
     {
         UnityEngine.Debug.Log("Nico Neutral Attack");
-        N_Animator.Play("N_NeutralAttack");
+        sr.GetComponent<SpriteRenderer>().sprite = neutralSprite;
+        GameObject tempHitbox = Instantiate(neutralHitbox, transform.position, transform.rotation);
+        tempHitbox.transform.parent = GetComponentInParent<Player>().transform;
+        tempHitbox.GetComponent<HitBox>().creator = GetComponentInParent<Player>();
+        Destroy(tempHitbox, neutralLag);
         //hitBox.damage = 4;
     }
 }

@@ -1309,7 +1309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &371897623
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1734,7 +1734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.800034}
+  m_AnchoredPosition: {x: 0, y: -31.799988}
   m_SizeDelta: {x: 0, y: 412.00928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583586971
@@ -3939,6 +3939,13 @@ MonoBehaviour:
   upHitbox: {fileID: 1624452260952658530, guid: 80306535389331744be6770c80fb0654, type: 3}
   leftHitbox: {fileID: 8021047165441269034, guid: 6e8bd25fff1f67148b9bdce91cad808e, type: 3}
   rightHitbox: {fileID: 5719445649851987973, guid: 94f1614f78f0ccc4ca1d0f8c8c148d5e, type: 3}
+  neutralHitbox: {fileID: 1624452260952658530, guid: 80306535389331744be6770c80fb0654, type: 3}
+  upSprite: {fileID: 21300000, guid: 1ad1da7adc2961244a6011d9e77a6d88, type: 3}
+  leftSprite: {fileID: 21300000, guid: 050722398d92bc0499ee344d6f3d3b72, type: 3}
+  rightSprite: {fileID: 21300000, guid: 050722398d92bc0499ee344d6f3d3b72, type: 3}
+  neutralSprite: {fileID: 21300000, guid: 326fb9c8eb8dd03428c40fe0e5222a03, type: 3}
+  defaultSprite: {fileID: 21300000, guid: f8d0d92fd85ad794cb5c777967775a9f, type: 3}
+  sr: {fileID: 727612540}
   upLag: 0.3
   downLag: 0
   rightLag: 0.3
@@ -5135,7 +5142,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5152,8 +5159,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.15
-  m_fontSizeBase: 20
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -6395,6 +6402,38 @@ PrefabInstance:
       propertyPath: sfx
       value: 
       objectReference: {fileID: 1122828560}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 1547528568}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: neutralSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bca5f777b51a6a14b827ebfe13cd39d5, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: rightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9f2430c771341e43ad056903113794d, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: upHitbox
+      value: 
+      objectReference: {fileID: 9014512145548177869, guid: e7ef656b1876e0b40ac18946048f4d7a, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 15a6ab6bde8551f41b6d93d0af3067fd, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: upSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9f2430c771341e43ad056903113794d, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: neutralHitbox
+      value: 
+      objectReference: {fileID: 1624452260952658530, guid: 80306535389331744be6770c80fb0654, type: 3}
+    - target: {fileID: 8388712987758050469, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
+      propertyPath: leftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9f2430c771341e43ad056903113794d, type: 3}
     - target: {fileID: 8388712987758050470, guid: e85fe0d107219a148ae3330c0f785a81, type: 3}
       propertyPath: spriteRenderer
       value: 
